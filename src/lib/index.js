@@ -1,5 +1,5 @@
-const middleware = require('./middleware');
 const database  = require('./database');
+const middleware = require('./middleware');
 const config = require('./config');
 const { response, messages } = require('./utils');
 /**
@@ -7,9 +7,9 @@ const { response, messages } = require('./utils');
  * @type {{middleware: (function(*): Promise<void>)}}
  */
 module.exports = {
-  middleware,
   response,
   database,
   config,
-  messages
+  messages,
+  middleware
 };

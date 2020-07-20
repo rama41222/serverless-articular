@@ -5,6 +5,7 @@ org: dinushankanrg
 plugins:
   - serverless-dotenv-plugin
   - serverless-mocha-plugin
+  - serverless-offline
 
 custom:
   dotenv:
@@ -19,25 +20,25 @@ provider:
     env: ${file(./env/.env.${self:provider.stage})}
 
 functions:
-  users:
-    handler: src/users.handler
+  u:
+    handler: src/users/users.handler
     events:
       - http:
           path: '/v1/users/{proxy+}'
           method: any
           cors: true
-  articles:
-    handler: src/topics.handler
-    events:
-      - http:
-          path: '/v1/articles/{proxy+}'
-          method: any
-          cors: true
-  topics:
-    handler: src/articles.handler
+  a:
+    handler: src/topics/topics.handler
     events:
       - http:
           path: '/v1/topics/{proxy+}'
+          method: any
+          cors: true
+  t:
+    handler: src/articles/articles.handler
+    events:
+      - http:
+          path: '/v1/articles/{proxy+}'
           method: any
           cors: true
 
