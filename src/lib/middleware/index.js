@@ -1,6 +1,12 @@
+const { connect } = require('./../database');
+
 module.exports = async (api) => {
- api.use((req, res, next) => {
+  
+  await connect();
+  
+  api.use((req, res, next) => {
    res.cors();
    next();
  });
+ 
 };

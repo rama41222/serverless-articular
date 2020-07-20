@@ -6,11 +6,18 @@ const {
   JWT_SECRET,
   L_AWS_ACCESS_KEY,
   L_AWS_SECRET,
-  DYANMODB_TABLE,
   L_AWS_REGION,
   DB_HOST,
-  DB_PORT
+  DB_PORT,
+  DB_PASSWORD,
+  DB_NAME
 } = process.env;
+
+let credentials = '';
+
+if(DB_HOST && DB_PORT && DB_PASSWORD) {
+  credentials = `${DB_HOST}:${DB_PORT}:${encodeURIComponent(DB_PASSWORD)}@`;
+}
 
 const baseSettings  = {
   app:{
@@ -18,14 +25,13 @@ const baseSettings  = {
     ENV: NODE_ENV || 'development'
   },
   aws: {
-    dynamo: {
-      AWS_SECRET: L_AWS_SECRET,
-      AWS_ACCESS_KEY: L_AWS_ACCESS_KEY,
-      DYANMODB_TABLE: DYANMODB_TABLE,
-      AWS_REGION: L_AWS_REGION,
-      DB_HOST: DB_HOST,
-      DB_PORT: DB_PORT
-    }
+    AWS_SECRET: L_AWS_SECRET,
+    AWS_ACCESS_KEY: L_AWS_ACCESS_KEY,
+    AWS_REGION: L_AWS_REGION,
+  },
+  mongo: {
+      url: `mongodb://${DB_HOST}:${encodeURIComponent(DB_PASSWORD)}@${DB_HOST}:${DB_PORT}/${NODE_ENV}-${DB_NAME}` || `mongodb://localhost/${NODE_ENV}-${APP_NAME}`,
+      host: `${DB_HOST}:${DB_PORT}` || 'mongodb://localhost/user-service'
   },
   jwt: {
     algorithm: JWT_ALGORITHM || 'HS256',
