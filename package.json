@@ -1,0 +1,32 @@
+{
+  "name": "serverless-articular",
+  "version": "1.0.0",
+  "description": "Article Manager API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rama41222/serverless-articular.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rama41222/serverless-articular/issues"
+  },
+  "homepage": "https://github.com/rama41222/serverless-articular#readme",
+  "dependencies": {
+    "aws-sdk": "^2.716.0",
+    "joi": "^17.1.1",
+    "jsonwebtoken": "^8.5.1",
+    "lambda-api": "^0.10.6"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "dotenv": "^8.2.0",
+    "mocha": "^8.0.1",
+    "serverless-dotenv-plugin": "^2.4.2",
+    "serverless-mocha-plugin": "^1.12.0"
+  }
+}

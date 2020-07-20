@@ -1,0 +1,43 @@
+service: serverless-articular
+
+app: serverless-articular
+org: dinushankanrg
+plugins:
+  - serverless-dotenv-plugin
+  - serverless-mocha-plugin
+
+custom:
+  dotenv:
+    basePath: ./env/
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: ${opt:stage, 'development'}
+  region: ap-south-1
+  environment:
+    env: ${file(./env/.env.${self:provider.stage})}
+
+functions:
+  users:
+    handler: src/users.handler
+    events:
+      - http:
+          path: '/v1/users/{proxy+}'
+          method: any
+          cors: true
+  articles:
+    handler: src/topics.handler
+    events:
+      - http:
+          path: '/v1/articles/{proxy+}'
+          method: any
+          cors: true
+  topics:
+    handler: src/articles.handler
+    events:
+      - http:
+          path: '/v1/topics/{proxy+}'
+          method: any
+          cors: true
+
