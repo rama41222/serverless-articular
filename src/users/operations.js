@@ -42,7 +42,7 @@ const auth = async(user, dbUser) => {
   }
   
   delete dbUser.password;
-  const tokenData = { id: dbUser.id };
+  const tokenData = { id: dbUser._id };
   const token = jwt.sign(tokenData, config.jwt.secret, { expiresIn: config.jwt.exp });
   return { message: messages.success.login, data: { user: dbUser, token: `bearer ${token}` }}
 };

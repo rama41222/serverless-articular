@@ -34,7 +34,7 @@ const register = async (req, res) => {
 const change = async (req, res) => {
   const user = req.body;
   const { admin } = req.permission;
-  const updated = await update(req.user.id, user, admin);
+  const updated = await update(req.user._id, user, admin);
   if(!updated) {
     return res.status(201).json(response(messages.error.user.update));
   }
