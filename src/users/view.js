@@ -17,9 +17,9 @@ const login = async( req, res) => {
 
 const register = async (req, res) => {
   const { email } = req.body;
-  const hasUser = await hasUser(email);
+  const exists = await hasUser(email);
   
-  if (hasUser) {
+  if (exists) {
     return res.status(400).json(response(messages.error.user.duplicate));
   }
   
