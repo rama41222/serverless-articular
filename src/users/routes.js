@@ -1,4 +1,4 @@
-const { status } = require('./view');
+const { status, login, register, update, profile } = require('./view');
 
 /**
  * User Routes
@@ -7,8 +7,10 @@ const { status } = require('./view');
  */
 module.exports = (api, opts) => {
   api.get('/status', status);
-  api.post('/register', status);
-  api.post('/login', status);
-  api.register('/admin/register', status);
-  api.get('/profile', status);
+  api.get('/profile', profile);
+  api.post('/register', register);
+  api.post('/login', login);
+  api.put('/profile', update);
+  // api.register('/admin/register', status);
+  
 };
