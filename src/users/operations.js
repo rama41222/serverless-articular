@@ -46,8 +46,11 @@ const auth = async(user, dbUser) => {
   return { message: messages.success.login, data: { user: dbUser, token: `bearer ${token}` }}
 };
 
-const update = async(id, user) => {
+const update = async(id, user, isAdmin) => {
   const dbUser = await User.findById(id).exec();
+  if(isAdmin && user.role) {
+    dbUser.role = user.role;
+  }
   if(user.password) {
     dbUser.password  = await bcrypt.hashSync(user.password, salt);
   }
