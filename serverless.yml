@@ -5,6 +5,7 @@ org: dinushankanrg
 plugins:
   - serverless-dotenv-plugin
   - serverless-mocha-plugin
+  - serverless-offline
 
 custom:
   dotenv:

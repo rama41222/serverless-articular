@@ -7,4 +7,8 @@ const { status } = require('./view');
  */
 module.exports = (api, opts) => {
   api.get('/status', status);
+  api.post('/register', status);
+  api.post('/login', status);
+  api.register('/admin/register', status);
+  api.get('/profile', status);
 };

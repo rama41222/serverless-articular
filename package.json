@@ -18,6 +18,7 @@
   "homepage": "https://github.com/rama41222/serverless-articular#readme",
   "dependencies": {
     "aws-sdk": "^2.716.0",
+    "bcryptjs": "^2.4.3",
     "joi": "^17.1.1",
     "jsonwebtoken": "^8.5.1",
     "lambda-api": "^0.10.6",

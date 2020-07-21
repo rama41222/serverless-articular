@@ -9,6 +9,7 @@ const {
   L_AWS_REGION,
   DB_HOST,
   DB_PORT,
+  DB_USER,
   DB_PASSWORD,
   DB_NAME
 } = process.env;
@@ -30,8 +31,8 @@ const baseSettings  = {
     AWS_REGION: L_AWS_REGION,
   },
   mongo: {
-      url: `mongodb://${DB_HOST}:${encodeURIComponent(DB_PASSWORD)}@${DB_HOST}:${DB_PORT}/${NODE_ENV}-${DB_NAME}` || `mongodb://localhost/${NODE_ENV}-${APP_NAME}`,
-      host: `${DB_HOST}:${DB_PORT}` || 'mongodb://localhost/user-service'
+      url: `mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${NODE_ENV}-${DB_NAME}` || `mongodb://localhost/${NODE_ENV}-${APP_NAME}`,
+      host: `${DB_HOST}` || 'mongodb://localhost/user-service'
   },
   jwt: {
     algorithm: JWT_ALGORITHM || 'HS256',
