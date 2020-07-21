@@ -6,14 +6,16 @@ const topicSchema = new Schema({
   name: {
     type: String,
     trim: true,
-    required: true
+    required: true,
+    unique: true
   },
   image: {
     type: String,
-    required: true,
+    default: 'http://argauto.lv/application/modules/themes/views/default/assets/images/image-placeholder.png'
   },
   user: {
-    type: Schema.Types.ObjectId, ref: 'User',
+    type: String,
+    ref: 'User',
     required: true,
   }
 }, { strict: true, timestamps: true });

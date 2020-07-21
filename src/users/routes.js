@@ -8,7 +8,7 @@ const { admin, user, general } = require('../services/authorization');
  * @param opts
  */
 module.exports = (api, opts) => {
-  api.get('/status', authentication, status);
+  api.get('/status', authentication, admin, status);
   api.get('/profile', authentication, general, profile);
   api.post('/register', register);
   api.post('/login', login);
