@@ -24,6 +24,7 @@ const hasUser = async(email) => {
 };
 
 const create = async(user) => {
+  if(user.role) delete user.role;
   user.password = await bcrypt.hashSync(user.password, salt);
   const newUser = await User.create(user);
   delete newUser.password;
