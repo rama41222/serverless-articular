@@ -48,6 +48,7 @@ const auth = async(user, dbUser) => {
 };
 
 const update = async(id, user, isAdmin) => {
+  if(!user) return null;
   const dbUser = await User.findById(id).exec();
   if(isAdmin && user.role) {
     dbUser.role = user.role;
@@ -59,11 +60,11 @@ const update = async(id, user, isAdmin) => {
   let updatedUser = await dbUser.save();
   if(updatedUser) {
     updatedUser = updatedUser.toObject();
-    delete updatedUser.password
+    delete updatedUser.password;
+    delete updatedUser.__v;
   };
   return updatedUser ? updatedUser : null;
 };
-
 
 module.exports = {
   list,

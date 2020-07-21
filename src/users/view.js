@@ -41,6 +41,17 @@ const change = async (req, res) => {
   res.status(200).json(response(messages.success.update, updated));
 };
 
+const makeAdmin = async(req, res) => {
+  const userId = req.params.id;
+  const { role } = req.body;
+  const { admin } = req.permission;
+  const updated = await update(userId, { role }, admin);
+  if(!updated) {
+    return res.status(201).json(response(messages.error.user.update));
+  }
+  res.status(200).json(response(messages.success.update, updated));
+};
+
 const profile = async(req, res) => {
   const { user } = req;
   delete user.password;
@@ -52,5 +63,6 @@ module.exports = {
   login,
   register,
   change,
-  profile
+  profile,
+  makeAdmin
 };
