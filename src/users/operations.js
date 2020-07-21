@@ -6,27 +6,27 @@ const  salt = bcrypt.genSaltSync(config.hash.saltRounds);
 
 
 const list = async(limit = 10, skip = 0) => {
-  return User.find().skip(skip).limit(limit).exec();
+  return User.find().select({ __v: 0 }).skip(skip).limit(limit).exec();
 };
 
 const listOne = async(id) => {
-  return User.findById(id).exec();
+  return User.findById(id).select({ __v: 0 }).exec();
 };
 
 const listByEmail = async(email) => {
-  return User.findOne({email}).exec();
+  return User.findOne({ email }, { __v: 0 }).exec();
 };
 
 const hasUser = async(email) => {
-  const count = User.estimatedDocumentCount({ email }).exec();
+  const count = await User.count({ email }).exec();
   return count > 0;
-  
 };
 
 const create = async(user) => {
   if(user.role) delete user.role;
   user.password = await bcrypt.hashSync(user.password, salt);
-  const newUser = await User.create(user);
+  let newUser = await User.create(user);
+  newUser = newUser.toObject();
   delete newUser.password;
   return newUser;
 };
@@ -40,9 +40,9 @@ const auth = async(user, dbUser) => {
   if(isValid !== true) {
     return { message: messages.error.user.invalid };
   }
-  
+  dbUser = dbUser.toObject();
   delete dbUser.password;
-  const tokenData = { id: dbUser._id };
+  const tokenData = { id: dbUser._id, role: dbUser.role };
   const token = jwt.sign(tokenData, config.jwt.secret, { expiresIn: config.jwt.exp });
   return { message: messages.success.login, data: { user: dbUser, token: `bearer ${token}` }}
 };
@@ -56,8 +56,11 @@ const update = async(id, user, isAdmin) => {
     dbUser.password  = await bcrypt.hashSync(user.password, salt);
   }
   if(user.name) dbUser.name = user.name;
-  const updatedUser = await dbUser.save();
-  if(updatedUser) delete updatedUser.password;
+  let updatedUser = await dbUser.save();
+  if(updatedUser) {
+    updatedUser = updatedUser.toObject();
+    delete updatedUser.password
+  };
   return updatedUser ? updatedUser : null;
 };
 

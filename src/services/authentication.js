@@ -25,8 +25,9 @@ const authentication = async (req, res, next) => {
     return res.status(401).send(response( messages.error.user.unauthorized, null , 401))
   }
   
-  const dbUser = await listOne(decoded.id);
-  if(!dbUser || dbUser.count === 0) return res.status(401).send(response( messages.error.user.invalid, ));
+  let dbUser = await listOne(decoded.id);
+  dbUser = dbUser.toObject();
+  if(!dbUser) return res.status(401).send(response( messages.error.user.invalid, ));
   const permission = { admin: false };
   if (dbUser && dbUser.role === 'admin') permission.admin = true;
   req.authenticated = true;

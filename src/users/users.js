@@ -6,5 +6,6 @@ middleware(api);
 routes(api);
 
 module.exports.handler = async (event, context, cb) => {
+  context.callbackWaitsForEmptyEventLoop = false;
   return api.run(event, context, cb);
 };
