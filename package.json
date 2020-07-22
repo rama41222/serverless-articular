@@ -4,7 +4,7 @@
   "description": "Article Manager API",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha ./tests -- testing"
   },
   "repository": {
     "type": "git",

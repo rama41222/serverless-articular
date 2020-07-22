@@ -94,6 +94,7 @@ sls remove --stage production
   into small functions gives room for extending, scaling and improves testability.
   
 ### Advantages
+
 * Lambda scales well
 * Api can be tested and integrated well.
 * Favours decoupling and SOLID principles
@@ -124,7 +125,7 @@ Please refer the following diagrams taken from AWS directly.
      * Maintaining the connection state inside lambda is a problem (Cold starts)
      * Some cross module dependencies which can be avoided by further decoupling the API.
      
-3. This Repo doesn't include the following
+3. *This Repo doesn't include the following*
 
     * Implement a refresh token mechanism (introspection endpoints, Token state manager) after JWT is expired (5mins)
     * Implementing a caching mechanism for the Binary Search Tree. Probably a redis cache
