@@ -18,9 +18,9 @@ const postArticle = async (req, res) => {
 const listArticles = async(req, res) => {
   const skip = parseInt(req.query.skip) || 0;
   const limit = parseInt(req.query.limit) || 100;
-  let { isFeatured, views, order, field } = req.query;
-  views = parseInt(views) || null;
-  isFeatured = parseInt(isFeatured) || null;
+  let { isFeatured, views, order, field, topicId } = req.query;
+  if(views) views = parseInt(views) || null;
+  if(isFeatured) isFeatured = isFeatured == 1 ? 1 : 0;
 
   let opts = {};
   let sort = {};
@@ -28,11 +28,10 @@ const listArticles = async(req, res) => {
   if(!req.user) {
     isFeatured = 0;
   }
-  
   if(field && typeof field === 'string') sort[`${field}`] = order;
+  if(topicId && typeof topicId === 'string') opts.topicId = topicId;
   if(typeof isFeatured  === 'number') opts.isFeatured = isFeatured;
   if(typeof views  === 'number') opts.views = views;
-  
   res.status(200).json(response(messages.success.general, await list(limit, skip, sort, opts)));
 };
 
