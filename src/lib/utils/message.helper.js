@@ -8,7 +8,7 @@ module.exports = {
       created: 'Topic creation successful',
     },
     article: {
-      created: 'Article creation successful',
+      created: 'Article creation successful'
     }
   },
   error: {

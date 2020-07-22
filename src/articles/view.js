@@ -41,7 +41,14 @@ const listArticle = async(req, res) => {
   if(!req.user) {
     opts.isFeatured = 0;
   }
-  res.status(200).json(response(messages.success.general, await listOne(id, opts) || {}));
+  const article = await listOne(id, opts);
+  if(!article) {
+    res.status(200).json(response(messages.error.article.not_found, {}, 200));
+  }
+  const { tags } = article;
+  opts.tags = { $in: tags }
+  const relatedArticles = await list(10, 0,{}, opts);
+  res.status(200).json(response(messages.success.general, { article, relatedArticles }));
 };
 
 const updateArticle = async(req, res) => {

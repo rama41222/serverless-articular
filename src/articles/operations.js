@@ -2,6 +2,10 @@ const Article = require('./model');
 const Topic = require('./../topics/model');
 const User = require('./../users/model');
 
+const hasViewed = async(id) => {
+  await Article.updateOne({ _id: id },{ $inc: { views: 1 }}, { new: true});
+};
+
 const list = async(limit = 10, skip = 0, sort, opts) => {
   const articles =  await Article.find()
     .where(opts)
@@ -22,6 +26,7 @@ const list = async(limit = 10, skip = 0, sort, opts) => {
 };
 
 const listOne = async(id, opts) => {
+  await hasViewed(id);
   return Article.findById(id).where(opts).populate('article', { name: 1, _id: 1 }).select({ __v: 0 }).exec();
 };
 
@@ -71,5 +76,6 @@ module.exports = {
   listOne,
   create,
   hasArticleByName,
-  update
+  update,
+  hasViewed,
 };
