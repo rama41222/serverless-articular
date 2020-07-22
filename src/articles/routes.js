@@ -17,7 +17,7 @@ module.exports = (api, opts) => {
   // todo: get articles by topic id,  =>  order by, skip, limit, by tags, featured
   api.get('/topics/:id', status);
   
-  api.put('/', authentication, admin, updateArticle);
+  api.put('/:id', authentication, admin, updateArticle);
   api.post('/:id/tags', authentication, admin, status);
   api.post('/', authentication, admin, postArticle);
 };

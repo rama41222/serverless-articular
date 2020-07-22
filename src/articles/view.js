@@ -28,9 +28,10 @@ const listArticle = async(req, res) => {
 };
 
 const updateArticle = async(req, res) => {
-  const updated = await update(req.body);
+  const { id } = req.params;
+  const updated = await update(id,req.body);
   if(!updated) {
-    return res.status(201).json(response(messages.error.user.update));
+    return res.status(201).json(response(messages.error.article.update));
   }
   res.status(200).json(response(messages.success.update, updated));
 };

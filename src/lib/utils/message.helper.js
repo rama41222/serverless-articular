@@ -34,6 +34,8 @@ module.exports = {
       invalid: 'Invalid Article',
       creation: 'Article creation failed',
       unauthorized: 'Unauthorized Request',
+      update: 'Article failed to update'
+  
     }
   }
 };

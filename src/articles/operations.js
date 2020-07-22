@@ -30,21 +30,21 @@ const create = async(article, id) => {
   return newArticle;
 };
 
-const update = async(article) => {
+const update = async(id, article) => {
   if(!article) return null;
-  const dbArticle = await listOne(article.id, { deleted: false });
+  const dbArticle = await Article.findById(id).where({ deleted: false });
   if(!dbArticle) return null;
-  if(article.name) dbArticle.name = article.name;
-  if(article.isFeatured) dbArticle.isFeatured = article.isFeatured;
-  if(article.tags) dbArticle.tags.concat(article.tags);
-  if(article.image) dbArticle.image = article.image;
-  if(!article.deleted) dbArticle.deleted = article.deleted;
+  if(article.hasOwnProperty('title') && typeof article.title === 'string') dbArticle.title = article.title;
+  if(article.hasOwnProperty('isFeatured') && typeof article.isFeatured === 'boolean') dbArticle.isFeatured = article.isFeatured;
+  if(article.hasOwnProperty('tags') && Array.isArray(dbArticle.tags)) dbArticle.tags = Array.from(new Set(dbArticle.tags.concat(article.tags)));
+  if(article.hasOwnProperty('image') && typeof article.image === 'string') dbArticle.image = article.image;
+  if(article.hasOwnProperty('deleted') && typeof article.deleted === 'boolean') dbArticle.deleted = article.deleted;
   let updatedArticle = await dbArticle.save();
   if(updatedArticle) {
     updatedArticle = updatedArticle.toObject();
     delete updatedArticle.password;
     delete updatedArticle.__v;
-  };
+  }
   return updatedArticle ? updatedArticle : null;
 };
 
