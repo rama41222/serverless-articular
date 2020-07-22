@@ -7,6 +7,8 @@ const { admin, user, general } = require('../services/authorization');
  * @param opts
  */
 module.exports = (api, opts) => {
+  // todo: binary tree view
+  api.get('/bst', authentication, admin, status);
   api.get('/status', authentication, admin, status);
   // todo: order by, skip, limit, by tags, featured
   api.get('/', status);
@@ -14,7 +16,8 @@ module.exports = (api, opts) => {
   // todo: get articles by topic id,  =>  order by, skip, limit, by tags, featured
   api.get('/topics/:id', status);
   // todo: update tags or put tags
-  api.put('/:id', status);
-  api.post('/:id/tags', status);
-  api.post('/', status);
+  api.put('/:id', authentication, admin, status);
+  api.post('/:id/tags', authentication, admin, status);
+  api.post('/', authentication, admin, status);
+  api.delete('/', authentication, admin, status);
 };
