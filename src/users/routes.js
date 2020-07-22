@@ -12,6 +12,6 @@ module.exports = (api, opts) => {
   api.get('/profile', authentication, general, profile);
   api.post('/register', register);
   api.post('/login', login);
-  api.put('/', authentication, general, change);
-  api.put('/:id', authentication, admin, makeAdmin);
+  api.put('/change/', authentication, general, change);
+  api.put('/admin/:id', authentication, admin, makeAdmin);
 };

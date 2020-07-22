@@ -1,5 +1,5 @@
 'use strict';
-const api = require('lambda-api')({ version: 'v1.0', base:'v1/articles'});
+const api = require('lambda-api')({ version: 'v1.0', base:'/v1/articles'});
 const routes = require('./routes');
 const { middleware } = require('./../lib');
 middleware(api);

@@ -10,6 +10,6 @@ const { admin, user, general } = require('../services/authorization');
 module.exports = (api, opts) => {
   api.get('/status', authentication, admin, status);
   api.get('/:id', authentication, general, listTopic);
-  api.get('/', authentication, general, listTopics);
-  api.post('/', authentication, admin, postTopic);
+  api.get('/list', authentication, general, listTopics);
+  api.post('/create', authentication, admin, postTopic);
 };
