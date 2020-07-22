@@ -6,7 +6,6 @@ const status = async(req, res) => {
 };
 
 const postArticle = async (req, res) => {
-  console.log(req.user);
   const id = req.user._id;
   const article = await create(req.body, id);
   

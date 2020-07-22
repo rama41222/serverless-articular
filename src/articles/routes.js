@@ -12,9 +12,9 @@ module.exports = (api, opts) => {
   api.get('/bst', authentication, admin, status);
   api.get('/status', authentication, admin, status);
 
-  api.get('/', authentication, guest, listArticles);
+  api.get('/', authentication, listArticles);
   
-  api.get('/:id', authentication, guest,listArticle);
+  api.get('/:id', authentication,listArticle);
   
   // todo: get articles by topic id,  =>  order by, skip, limit, by tags, featured
   // api.get('/topics/:id', status);

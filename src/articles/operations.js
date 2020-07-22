@@ -2,7 +2,6 @@ const Article = require('./model');
 const Topic = require('./../topics/model');
 
 const list = async(limit = 10, skip = 0, sort, opts) => {
-  console.log(opts, sort);
   const articles =  await Article.find()
     .where(opts)
     .populate('topicId', { name: 1, _id: 1 })
