@@ -1,17 +1,12 @@
 const { response, messages } = require('./../lib');
-const { hasArticleByName, create, listOne, list } = require('./operations');
+const { hasArticleByName, create, listOne, list, update } = require('./operations');
 
 const status = async(req, res) => {
   res.status(200).json(response(messages.success.general, {}, 200));
 };
 
 const postArticle = async (req, res) => {
-  const { name } = req.body;
-  const exists = await hasArticleByName(name);
-  
-  if(exists) {
-    return res.status(400).json(response(messages.error.article.duplicate));
-  }
+  console.log(req.user);
   const id = req.user._id;
   const article = await create(req.body, id);
   
@@ -32,9 +27,18 @@ const listArticle = async(req, res) => {
   res.status(200).json(response(messages.success.general, await listOne(id)));
 };
 
+const updateArticle = async(req, res) => {
+  const updated = await update(req.body);
+  if(!updated) {
+    return res.status(201).json(response(messages.error.user.update));
+  }
+  res.status(200).json(response(messages.success.update, updated));
+};
+
 module.exports = {
   status,
   postArticle,
   listArticles,
   listArticle,
+  updateArticle
 };

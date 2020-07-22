@@ -5,7 +5,7 @@ const topicSchema = new Schema({
   name: {
     type: String,
     trim: true,
-    required: true,
+    required: [true, 'Name is required'],
     unique: true
   },
   image: {
@@ -15,7 +15,7 @@ const topicSchema = new Schema({
   user: {
     type: String,
     ref: 'User',
-    required: true,
+    required: [true, 'User is required'],
   }
 }, { strict: true, timestamps: true });
 

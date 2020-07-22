@@ -5,8 +5,7 @@ const articleSchema = new Schema({
   title: {
     type: String,
     trim: true,
-    required: true,
-    unique: true
+    required: [true, 'Title is required'],
   },
   image: {
     type: String,
@@ -26,7 +25,7 @@ const articleSchema = new Schema({
   topicId: {
     type: String,
     ref: 'Topic',
-    required: true
+    required: [true, 'Topic is required']
   },
   deleted: {
     type: Boolean,
@@ -39,7 +38,7 @@ const articleSchema = new Schema({
   user: {
     type: String,
     ref: 'User',
-    required: true,
+    required: [true, 'User is required'],
   }
 }, { strict: true, timestamps: true });
 

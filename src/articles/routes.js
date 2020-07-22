@@ -1,8 +1,9 @@
-const { status, postArticle, listArticles, listArticle } = require('./view');
+const { status, postArticle, listArticles, listArticle, updateArticle } = require('./view');
 const authentication = require('./../services/authentication');
 const { admin, user, general } = require('../services/authorization');
+
 /**
- * User Routes
+ * Article Routes
  * @param api
  * @param opts
  */
@@ -15,9 +16,8 @@ module.exports = (api, opts) => {
   api.get('/:id', status);
   // todo: get articles by topic id,  =>  order by, skip, limit, by tags, featured
   api.get('/topics/:id', status);
-  // todo: update tags or put tags
-  api.put('/:id', authentication, admin, status);
+  
+  api.put('/', authentication, admin, updateArticle);
   api.post('/:id/tags', authentication, admin, status);
-  api.post('/', authentication, admin, status);
-  api.delete('/', authentication, admin, status);
+  api.post('/', authentication, admin, postArticle);
 };

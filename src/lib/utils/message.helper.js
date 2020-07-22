@@ -6,6 +6,9 @@ module.exports = {
     general: 'Operation successful',
     topic: {
       created: 'Topic creation successful',
+    },
+    article: {
+      created: 'Topic creation successful',
     }
   },
   error: {
@@ -26,7 +29,11 @@ module.exports = {
       unauthorized: 'Unauthorized Request',
     },
     article: {
-    
+      not_found: 'Article not found',
+      duplicate: 'Article already exist',
+      invalid: 'Invalid Article',
+      creation: 'Article creation failed',
+      unauthorized: 'Unauthorized Request',
     }
   }
 };
