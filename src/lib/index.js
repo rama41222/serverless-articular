@@ -1,7 +1,7 @@
 const database  = require('./database');
 const middleware = require('./middleware');
 const config = require('./config');
-const { response, messages } = require('./utils');
+const { response, messages, seeder } = require('./utils');
 /**
  * Exposing the required sections of the library
  * @type {{middleware: (function(*): Promise<void>)}}
@@ -11,5 +11,6 @@ module.exports = {
   database,
   config,
   messages,
-  middleware
+  middleware,
+  seeder
 };

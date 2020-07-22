@@ -2,7 +2,7 @@ const bcrypt = require('bcryptjs');
 const User = require('./model');
 const jwt = require('jsonwebtoken');
 const { config, messages } = require('./../lib');
-const  salt = bcrypt.genSaltSync(config.hash.saltRounds);
+const salt = bcrypt.genSaltSync(config.hash.saltRounds);
 
 
 const list = async(limit = 10, skip = 0) => {
