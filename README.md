@@ -133,3 +133,71 @@ Please refer the following diagrams taken from AWS directly.
     * Write some Serverless integration tests
     * Add Joi validation library for further validation
     * Global Error handling module
+
+### Sprint
+Incomplete requirements 
+- [ ] Unit Tests
+- [ ] Validation scheme
+
+#### User 
+- [x] Login 
+- no __v
+- no password
+- [x] Admin user create
+- [x] Update
+- password update
+- role update
+- name update
+- check if login work after password change
+- [x] User roles
+- [x] Authorization
+- [x] Return jwt(5mins)
+- [x] Signup
+- Duplicate test
+- Password field test
+- Role as admin check
+
+#### Topic
+- [x] Fetch topic by id (all users)
+- [x] Fetch all topics (all users)
+- Skip and limit
+- [x] Create a topic.(name, image) (admin)
+- Duplicate topics
+- Populate user 
+
+#### Articles 
+- [x] Create articles(title, image, content, isfeatured, topic id, deleted ) (admins)
+- Topic id validity. 
+- Fetching refs
+- [x] Update articles(admin)
+    - [x] fetch articles, deleted false always 
+    - [x] deleted true (soft)
+    - [x] Change image ?
+    - [x] Add tags ?
+    - [x] Name ? 
+    - [x] Featured ? 
+* {base_url}}/articles?order=desc&field=isFeatured
+* {base_url}}/articles?order=asc&field=views
+* {base_url}}/articles?skip=0&limit=12
+* {base_url}}/articles?order=desc&field=isFeatured
+* {base_url}}/articles?order=desc&field=views
+
+- [x] View count ()
+- [x] Fetch articles for a topic id 
+* {{base_url}}/articles?skip=0&topicId=5f177fdb7efa14007db2f840
+- [x] Fetch related articles with a article 
+- Parent article should not show up on related list
+- [x] Logged on users can see featured articles 
+- [x] Add tags, related articles 
+- [x] Order of articles (asa, desc, featured first etc)
+- [x] Fetch article by id
+- Featured ?
+- Showing featured articles on Guests  
+
+### Others 
+- [x] Binary tree based on articles count 
+- In memory heap 
+- [x] Delete articles  can update tree representation 
+
+
+
