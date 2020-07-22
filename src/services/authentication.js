@@ -10,7 +10,7 @@ const authentication = async (req, res, next) => {
   
   if (!token) {
     req.authenticated = false;
-    return res.status(401).send(response(messages.error.user.unauthorized, null, 401 ));
+    return next();
   }
   
   try {

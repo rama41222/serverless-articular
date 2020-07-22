@@ -1,7 +1,14 @@
 const Topic = require('./model');
 
 const list = async(limit = 10, skip = 0) => {
-  return Topic.find().populate('user', { name: 1, _id: 1 }).select({ __v: 0 }).skip(skip).limit(limit).exec();
+  const total = await Topic.count();
+  const topics = await Topic.find()
+    .populate('user', { name: 1, _id: 1 })
+    .select({ __v: 0 })
+    .skip(skip)
+    .limit(limit)
+    .exec();
+  return { total, topics };
 };
 
 const listOne = async(id) => {

@@ -19,12 +19,31 @@ const postArticle = async (req, res) => {
 const listArticles = async(req, res) => {
   const skip = parseInt(req.query.skip) || 0;
   const limit = parseInt(req.query.limit) || 100;
-  res.status(200).json(response(messages.success.general, await list(limit, skip)));
+  let { isFeatured, views, order, field } = req.query;
+  views = parseInt(views) || null;
+  isFeatured = parseInt(isFeatured) || null;
+
+  let opts = {};
+  let sort = {};
+  
+  if(!req.user) {
+    isFeatured = 0;
+  }
+  
+  if(field && typeof field === 'string') sort[`${field}`] = order;
+  if(typeof isFeatured  === 'number') opts.isFeatured = isFeatured;
+  if(typeof views  === 'number') opts.views = views;
+  
+  res.status(200).json(response(messages.success.general, await list(limit, skip, sort, opts)));
 };
 
 const listArticle = async(req, res) => {
   const id = req.params.id;
-  res.status(200).json(response(messages.success.general, await listOne(id)));
+  let opts = {};
+  if(!req.user) {
+    opts.isFeatured = 0;
+  }
+  res.status(200).json(response(messages.success.general, await listOne(id, opts) || {}));
 };
 
 const updateArticle = async(req, res) => {

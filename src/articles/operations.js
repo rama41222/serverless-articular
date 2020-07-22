@@ -1,7 +1,23 @@
 const Article = require('./model');
+const Topic = require('./../topics/model');
 
-const list = async(limit = 10, skip = 0) => {
-  return Article.find().populate('article', { name: 1, _id: 1 }).select({ __v: 0 }).skip(skip).limit(limit).exec();
+const list = async(limit = 10, skip = 0, sort, opts) => {
+  console.log(opts, sort);
+  const articles =  await Article.find()
+    .where(opts)
+    .populate('topicId', { name: 1, _id: 1 })
+    .select({ __v: 0 })
+    .sort(sort)
+    .skip(skip)
+    .limit(limit)
+    .exec();
+  
+  const total = await Article.find()
+    .where(opts)
+    .select({_id: 1})
+    .count();
+  
+  return { total, articles };
 };
 
 const listOne = async(id, opts) => {
@@ -19,7 +35,7 @@ const hasArticleByName = async(name) => {
 };
 
 const create = async(article, id) => {
-  article.article = id;
+  article.user = id;
   let newArticle = await Article.create(article);
   newArticle = await newArticle
     .populate('article', { password: 0, __v: 0})
