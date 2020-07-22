@@ -46,7 +46,8 @@ const listArticle = async(req, res) => {
     res.status(200).json(response(messages.error.article.not_found, {}, 200));
   }
   const { tags } = article;
-  opts.tags = { $in: tags }
+  opts.tags = { $in: tags };
+  opts._id = { $ne: article._id };
   const relatedArticles = await list(10, 0,{}, opts);
   res.status(200).json(response(messages.success.general, { article, relatedArticles }));
 };
