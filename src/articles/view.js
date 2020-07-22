@@ -1,5 +1,5 @@
 const { response, messages } = require('./../lib');
-const { hasArticleByName, create, listOne, list, update } = require('./operations');
+const { create, listOne, list, update, binarySearchTree } = require('./operations');
 
 const status = async(req, res) => {
   res.status(200).json(response(messages.success.general, {}, 200));
@@ -22,7 +22,7 @@ const listArticles = async(req, res) => {
   if(views) views = parseInt(views) || null;
   if(isFeatured) isFeatured = isFeatured == 1 ? 1 : 0;
 
-  let opts = {};
+  let opts = { deleted: false };
   let sort = {};
   
   if(!req.user) {
@@ -37,7 +37,7 @@ const listArticles = async(req, res) => {
 
 const listArticle = async(req, res) => {
   const id = req.params.id;
-  let opts = {};
+  let opts = { deleted: false };
   if(!req.user) {
     opts.isFeatured = 0;
   }
@@ -61,10 +61,19 @@ const updateArticle = async(req, res) => {
   res.status(200).json(response(messages.success.update, updated));
 };
 
+const fetchBst = async(req, res) => {
+  const bst = await binarySearchTree();
+  if(!bst) {
+    return res.status(201).json(response(messages.error.article.invalid_bst));
+  }
+  res.status(200).json(response(messages.success.general, bst));
+};
+
 module.exports = {
   status,
   postArticle,
   listArticles,
   listArticle,
-  updateArticle
+  updateArticle,
+  fetchBst
 };

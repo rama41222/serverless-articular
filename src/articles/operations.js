@@ -1,3 +1,4 @@
+const BinaryHeap = require('binaryheap');
 const Article = require('./model');
 const Topic = require('./../topics/model');
 const User = require('./../users/model');
@@ -35,11 +36,6 @@ const hasArticle = async(articleId) => {
   return count > 0;
 };
 
-const hasArticleByName = async(name) => {
-  const count = await Article.count({ name }).exec();
-  return count > 0;
-};
-
 const create = async(article, id) => {
   article.user = id;
   let newArticle = await Article.create(article);
@@ -62,12 +58,28 @@ const update = async(id, article) => {
   if(article.hasOwnProperty('image') && typeof article.image === 'string') dbArticle.image = article.image;
   if(article.hasOwnProperty('deleted') && typeof article.deleted === 'boolean') dbArticle.deleted = article.deleted;
   let updatedArticle = await dbArticle.save();
+  let bst;
   if(updatedArticle) {
+    if(article.hasOwnProperty('deleted') && typeof article.deleted === 'boolean')  {
+      bst = await binarySearchTree();
+    }
     updatedArticle = updatedArticle.toObject();
     delete updatedArticle.password;
     delete updatedArticle.__v;
   }
-  return updatedArticle ? updatedArticle : null;
+  return updatedArticle ? bst? bst : updatedArticle : null;
+};
+
+const binarySearchTree = async() => {
+  const articleData = await list(0, 0, {}, { deleted: false });
+  const { articles, total } = articleData
+  const heap = new BinaryHeap();
+  articles.forEach(a => heap.insert({ value: {views: a.views, key: a._id}}, a.views));
+  const arr = [];
+  while (heap.length) {
+    arr.push(heap.pop().value);
+  }
+  return arr;
 };
 
 module.exports = {
@@ -75,7 +87,7 @@ module.exports = {
   hasArticle,
   listOne,
   create,
-  hasArticleByName,
   update,
   hasViewed,
+  binarySearchTree
 };

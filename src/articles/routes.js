@@ -1,4 +1,4 @@
-const { status, postArticle, listArticles, listArticle, updateArticle } = require('./view');
+const { status, postArticle, listArticles, listArticle, updateArticle, fetchBst } = require('./view');
 const authentication = require('./../services/authentication');
 const { admin, user, general, guest } = require('../services/authorization');
 
@@ -9,7 +9,7 @@ const { admin, user, general, guest } = require('../services/authorization');
  */
 module.exports = (api, opts) => {
   // todo: binary tree view
-  api.get('/bst', authentication, admin, status);
+  api.get('/bst', authentication, admin, fetchBst);
   api.get('/status', authentication, admin, status);
   api.get('/', authentication, listArticles);
   api.get('/:id', authentication,listArticle);
