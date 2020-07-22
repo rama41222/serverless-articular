@@ -5,8 +5,8 @@ Article Manager API
 1. Docker up and running
 2. Node and npm installed
 3. aws-cli
-4. [Postman Collection](https://documenter.getpostman.com/view/2822837/T1DnixyL) or [goto](./_/) including the
- environment
+4. [Postman Collection](https://documenter.getpostman.com/view/2822837/T1DnixyL) or [goto](./_/)  for postman
+ collection and the environment
 
 ## Setup
 Skip if you have already setup the following.
@@ -99,13 +99,15 @@ sls remove --stage production
 * Favours decoupling and SOLID principles
 
 ### Architecture
+
 Please refer the following diagrams taken from AWS directly. 
 
 <img src="_/serverless%20diagram.jpg"/>
 
-### Discussion
+### Q&A
 
 1. Overview + Why I selected this tech stack ? 
+
      * App is based around AWS Lambda
      * The app is exposed to the web through an AWS API gateway connected to the lambda function, which has the service
       endpoints.
@@ -115,6 +117,7 @@ Please refer the following diagrams taken from AWS directly.
       to the particular function.
   
 2. Weaknesses
+   
      * Currently depends on Serverless framework and AWS. Writing a deployment using Terraform would make this cloud
       agnostic since almost all cloud providers support FaaS.
      * The code is mostly production ready

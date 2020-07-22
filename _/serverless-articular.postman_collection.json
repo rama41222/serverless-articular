@@ -1,0 +1,2254 @@
+{
+	"info": {
+		"_postman_id": "9ea60037-9acd-4237-a932-76d7cc093d14",
+		"name": "serverless-articular",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "topics",
+			"item": [
+				{
+					"name": "topics status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url}}/topics/status",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"topics",
+								"status"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "topics status",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/topics/status",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"topics",
+										"status"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "origin"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "WWW-Authenticate,Server-Authorization"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "content-length",
+									"value": "57"
+								},
+								{
+									"key": "accept-ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jul 2020 12:09:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Operation successful\",\n    \"data\": {},\n    \"status\": 200\n}"
+						}
+					]
+				},
+				{
+					"name": "create a topic",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"New \"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/topics/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"topics",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all topics",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url}}/topics?skip=2&limit=0",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"topics"
+							],
+							"query": [
+								{
+									"key": "skip",
+									"value": "2"
+								},
+								{
+									"key": "limit",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get all topics",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/topics?skip=2&limit=0",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"topics"
+									],
+									"query": [
+										{
+											"key": "skip",
+											"value": "2"
+										},
+										{
+											"key": "limit",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "origin,accept-encoding"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "WWW-Authenticate,Server-Authorization"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "content-encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jul 2020 00:09:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Operation successful\",\n    \"data\": [\n        {\n            \"image\": \"http://argauto.lv/application/modules/themes/views/default/assets/images/image-placeholder.png\",\n            \"_id\": \"5f177f777e086f8594b37d87\",\n            \"name\": \"Japan\",\n            \"user\": {\n                \"_id\": \"5f174a822aaadd631da86127\",\n                \"name\": \"inu\"\n            },\n            \"createdAt\": \"2020-07-21T23:51:19.978Z\",\n            \"updatedAt\": \"2020-07-21T23:51:19.978Z\"\n        },\n        {\n            \"image\": \"http://argauto.lv/application/modules/themes/views/default/assets/images/image-placeholder.png\",\n            \"_id\": \"5f177fdb7efa14007db2f840\",\n            \"name\": \"Canada\",\n            \"user\": {\n                \"_id\": \"5f174a822aaadd631da86127\",\n                \"name\": \"inu\"\n            },\n            \"createdAt\": \"2020-07-21T23:52:59.099Z\",\n            \"updatedAt\": \"2020-07-21T23:52:59.099Z\"\n        },\n        {\n            \"image\": \"http://argauto.lv/application/modules/themes/views/default/assets/images/image-placeholder.png\",\n            \"_id\": \"5f17800f992dd60130d3676c\",\n            \"name\": \"Sri Lanka\",\n            \"user\": {\n                \"_id\": \"5f174a822aaadd631da86127\",\n                \"name\": \"inu\"\n            },\n            \"createdAt\": \"2020-07-21T23:53:51.706Z\",\n            \"updatedAt\": \"2020-07-21T23:53:51.706Z\"\n        },\n        {\n            \"image\": \"http://argauto.lv/application/modules/themes/views/default/assets/images/image-placeholder.png\",\n            \"_id\": \"5f17805aca145e0221c9c336\",\n            \"name\": \"Aus\",\n            \"user\": {\n                \"_id\": \"5f174a822aaadd631da86127\",\n                \"name\": \"inu\"\n            },\n            \"createdAt\": \"2020-07-21T23:55:06.921Z\",\n            \"updatedAt\": \"2020-07-21T23:55:06.921Z\"\n        },\n        {\n            \"image\": \"http://argauto.lv/application/modules/themes/views/default/assets/images/image-placeholder.png\",\n            \"_id\": \"5f1780acb061220301f72979\",\n            \"name\": \"New Zealand\",\n            \"user\": {\n                \"_id\": \"5f174a822aaadd631da86127\",\n                \"name\": \"inu\"\n            },\n            \"createdAt\": \"2020-07-21T23:56:28.259Z\",\n            \"updatedAt\": \"2020-07-21T23:56:28.259Z\"\n        },\n        {\n            \"image\": \"http://argauto.lv/application/modules/themes/views/default/assets/images/image-placeholder.png\",\n            \"_id\": \"5f178131154683039f5ec8b5\",\n            \"name\": \"New\",\n            \"user\": {\n                \"_id\": \"5f174a822aaadd631da86127\",\n                \"name\": \"inu\"\n            },\n            \"createdAt\": \"2020-07-21T23:58:41.872Z\",\n            \"updatedAt\": \"2020-07-21T23:58:41.872Z\"\n        }\n    ],\n    \"status\": 200\n}"
+						}
+					]
+				},
+				{
+					"name": "get topic by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url}}/topics/5f177e32aa26cc82f2e72008",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"topics",
+								"5f177e32aa26cc82f2e72008"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get topic by id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/topics/5f177e32aa26cc82f2e72008",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"topics",
+										"5f177e32aa26cc82f2e72008"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "origin"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "WWW-Authenticate,Server-Authorization"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "content-length",
+									"value": "342"
+								},
+								{
+									"key": "accept-ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jul 2020 00:11:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Operation successful\",\n    \"data\": {\n        \"image\": \"http://argauto.lv/application/modules/themes/views/default/assets/images/image-placeholder.png\",\n        \"_id\": \"5f177e32aa26cc82f2e72008\",\n        \"name\": \"Ocean\",\n        \"user\": {\n            \"_id\": \"5f174a822aaadd631da86127\",\n            \"name\": \"inu\"\n        },\n        \"createdAt\": \"2020-07-21T23:45:54.439Z\",\n        \"updatedAt\": \"2020-07-21T23:45:54.439Z\"\n    },\n    \"status\": 200\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "articles",
+			"item": [
+				{
+					"name": "articles status",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url}}/articles/status",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"articles",
+								"status"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "articles status",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/articles/status",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"articles",
+										"status"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "origin"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "WWW-Authenticate,Server-Authorization"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "content-length",
+									"value": "57"
+								},
+								{
+									"key": "accept-ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jul 2020 06:08:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Operation successful\",\n    \"data\": {},\n    \"status\": 200\n}"
+						}
+					]
+				},
+				{
+					"name": "list articles",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url}}/articles?order=desc&field=isFeatured&skip=0",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"articles"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "desc"
+								},
+								{
+									"key": "field",
+									"value": "isFeatured"
+								},
+								{
+									"key": "skip",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "list articles",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/articles?order=desc&field=views&skip=0",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"articles"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "desc"
+										},
+										{
+											"key": "field",
+											"value": "views"
+										},
+										{
+											"key": "skip",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "origin,accept-encoding"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "WWW-Authenticate,Server-Authorization"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "content-encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jul 2020 12:03:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Operation successful\",\n    \"data\": {\n        \"total\": 9,\n        \"articles\": [\n            {\n                \"image\": \"https://getuikit.com/v2/docs/images/placeholder_600x400.svg\",\n                \"isFeatured\": false,\n                \"tags\": [],\n                \"deleted\": false,\n                \"views\": 0,\n                \"_id\": \"5f17e15d83ec7d18e197a2f5\",\n                \"title\": \"my canadian dream\",\n                \"topicId\": {\n                    \"_id\": \"5f177fdb7efa14007db2f840\",\n                    \"name\": \"Canada\"\n                },\n                \"user\": \"5f174a822aaadd631da86127\",\n                \"createdAt\": \"2020-07-22T06:49:01.104Z\",\n                \"updatedAt\": \"2020-07-22T06:49:01.104Z\"\n            },\n            {\n                \"image\": \"https://getuikit.com/v2/docs/images/placeholder_600x400.svg\",\n                \"isFeatured\": false,\n                \"tags\": [],\n                \"deleted\": false,\n                \"views\": 0,\n                \"_id\": \"5f17e17683ec7d18e197a2f6\",\n                \"title\": \"my canadian dream\",\n                \"topicId\": {\n                    \"_id\": \"5f177fdb7efa14007db2f840\",\n                    \"name\": \"Canada\"\n                },\n                \"user\": \"5f174a822aaadd631da86127\",\n                \"createdAt\": \"2020-07-22T06:49:26.354Z\",\n                \"updatedAt\": \"2020-07-22T06:49:26.354Z\"\n            },\n            {\n                \"image\": \"https://getuikit.com/v2/docs/images/placeholder_600x400.svg\",\n                \"isFeatured\": false,\n                \"tags\": [],\n                \"deleted\": false,\n                \"views\": 0,\n                \"_id\": \"5f17e289e2a52719c027d80b\",\n                \"title\": \"my canadian dream\",\n                \"topicId\": {\n                    \"_id\": \"5f177fdb7efa14007db2f840\",\n                    \"name\": \"Canada\"\n                },\n                \"user\": \"5f174a822aaadd631da86127\",\n                \"createdAt\": \"2020-07-22T06:54:01.469Z\",\n                \"updatedAt\": \"2020-07-22T06:54:01.469Z\"\n            },\n            {\n                \"image\": \"https://getuikit.com/v2/docs/images/placeholder_600x400.svg\",\n                \"isFeatured\": false,\n                \"tags\": [],\n                \"deleted\": false,\n                \"views\": 0,\n                \"_id\": \"5f17e2dc068fa61a2ea92130\",\n                \"title\": \"my canadian dream\",\n                \"topicId\": {\n                    \"_id\": \"5f177fdb7efa14007db2f840\",\n                    \"name\": \"Canada\"\n                },\n                \"user\": \"5f174a822aaadd631da86127\",\n                \"createdAt\": \"2020-07-22T06:55:24.988Z\",\n                \"updatedAt\": \"2020-07-22T06:55:24.988Z\"\n            },\n            {\n                \"image\": \"https://getuikit.com/v2/docs/images/placeholder_600x400.svg\",\n                \"isFeatured\": true,\n                \"tags\": [],\n                \"deleted\": false,\n                \"views\": 0,\n                \"_id\": \"5f17e2f5068fa61a2ea92131\",\n                \"title\": \"my toronto dream\",\n                \"topicId\": {\n                    \"_id\": \"5f177fdb7efa14007db2f840\",\n                    \"name\": \"Canada\"\n                },\n                \"user\": \"5f174a822aaadd631da86127\",\n                \"createdAt\": \"2020-07-22T06:55:49.206Z\",\n                \"updatedAt\": \"2020-07-22T06:55:49.206Z\"\n            },\n            {\n                \"image\": \"https://getuikit.com/v2/docs/images/placeholder_600x400.svg\",\n                \"isFeatured\": true,\n                \"tags\": [\n                    \"canada\",\n                    \"life\",\n                    \"chill\",\n                    \"x\",\n                    \"japan\"\n                ],\n                \"deleted\": false,\n                \"views\": 0,\n                \"_id\": \"5f17e30b068fa61a2ea92132\",\n                \"title\": \"my japan\",\n                \"topicId\": {\n                    \"_id\": \"5f177fdb7efa14007db2f840\",\n                    \"name\": \"Canada\"\n                },\n                \"user\": \"5f174a822aaadd631da86127\",\n                \"createdAt\": \"2020-07-22T06:56:11.266Z\",\n                \"updatedAt\": \"2020-07-22T11:19:50.344Z\"\n            },\n            {\n                \"image\": \"https://getuikit.com/v2/docs/images/placeholder_600x400.svg\",\n                \"isFeatured\": true,\n                \"tags\": [\n                    \"canada\",\n                    \"life\"\n                ],\n                \"deleted\": false,\n                \"views\": 0,\n                \"_id\": \"5f181fe95cecfd34c46777ec\",\n                \"title\": \"fuji dreams\",\n                \"topicId\": {\n                    \"_id\": \"5f177f777e086f8594b37d87\",\n                    \"name\": \"Japan\"\n                },\n                \"user\": \"5f174a822aaadd631da86127\",\n                \"createdAt\": \"2020-07-22T11:15:53.881Z\",\n                \"updatedAt\": \"2020-07-22T11:15:53.881Z\"\n            },\n            {\n                \"image\": \"https://getuikit.com/v2/docs/images/placeholder_600x400.svg\",\n                \"isFeatured\": false,\n                \"tags\": [\n                    \"canada\",\n                    \"life\"\n                ],\n                \"deleted\": false,\n                \"views\": 0,\n                \"_id\": \"5f1820835cecfd34c46777ed\",\n                \"title\": \"osaka dreams\",\n                \"topicId\": {\n                    \"_id\": \"5f177f777e086f8594b37d87\",\n                    \"name\": \"Japan\"\n                },\n                \"user\": \"5f174a822aaadd631da86127\",\n                \"createdAt\": \"2020-07-22T11:18:27.264Z\",\n                \"updatedAt\": \"2020-07-22T11:18:27.264Z\"\n            },\n            {\n                \"image\": \"https://getuikit.com/v2/docs/images/placeholder_600x400.svg\",\n                \"isFeatured\": false,\n                \"tags\": [\n                    \"canada\",\n                    \"life\"\n                ],\n                \"deleted\": false,\n                \"views\": 0,\n                \"_id\": \"5f1820ea5cecfd34c46777ee\",\n                \"title\": \"osaka dreams\",\n                \"topicId\": {\n                    \"_id\": \"5f177f777e086f8594b37d87\",\n                    \"name\": \"Japan\"\n                },\n                \"user\": \"5f174a822aaadd631da86127\",\n                \"createdAt\": \"2020-07-22T11:20:10.561Z\",\n                \"updatedAt\": \"2020-07-22T11:20:10.561Z\"\n            }\n        ]\n    },\n    \"status\": 200\n}"
+						},
+						{
+							"name": "list articles",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "{{token}}",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/articles?skip=0&topicId=5f177fdb7efa14007db2f840",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"articles"
+									],
+									"query": [
+										{
+											"key": "skip",
+											"value": "0"
+										},
+										{
+											"key": "topicId",
+											"value": "5f177fdb7efa14007db2f840"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "origin,accept-encoding"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "WWW-Authenticate,Server-Authorization"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "content-encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jul 2020 13:40:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Operation successful\",\n    \"data\": {\n        \"total\": 4,\n        \"articles\": [\n            {\n                \"image\": \"https://getuikit.com/v2/docs/images/placeholder_600x400.svg\",\n                \"isFeatured\": false,\n                \"tags\": [],\n                \"deleted\": false,\n                \"views\": 0,\n                \"_id\": \"5f17e15d83ec7d18e197a2f5\",\n                \"title\": \"my canadian dream\",\n                \"topicId\": {\n                    \"_id\": \"5f177fdb7efa14007db2f840\",\n                    \"name\": \"Canada\"\n                },\n                \"user\": {\n                    \"_id\": \"5f174a822aaadd631da86127\",\n                    \"name\": \"inu\"\n                },\n                \"createdAt\": \"2020-07-22T06:49:01.104Z\",\n                \"updatedAt\": \"2020-07-22T06:49:01.104Z\"\n            },\n            {\n                \"image\": \"https://getuikit.com/v2/docs/images/placeholder_600x400.svg\",\n                \"isFeatured\": false,\n                \"tags\": [],\n                \"deleted\": false,\n                \"views\": 0,\n                \"_id\": \"5f17e17683ec7d18e197a2f6\",\n                \"title\": \"my canadian dream\",\n                \"topicId\": {\n                    \"_id\": \"5f177fdb7efa14007db2f840\",\n                    \"name\": \"Canada\"\n                },\n                \"user\": {\n                    \"_id\": \"5f174a822aaadd631da86127\",\n                    \"name\": \"inu\"\n                },\n                \"createdAt\": \"2020-07-22T06:49:26.354Z\",\n                \"updatedAt\": \"2020-07-22T06:49:26.354Z\"\n            },\n            {\n                \"image\": \"https://getuikit.com/v2/docs/images/placeholder_600x400.svg\",\n                \"isFeatured\": false,\n                \"tags\": [],\n                \"deleted\": false,\n                \"views\": 0,\n                \"_id\": \"5f17e289e2a52719c027d80b\",\n                \"title\": \"my canadian dream\",\n                \"topicId\": {\n                    \"_id\": \"5f177fdb7efa14007db2f840\",\n                    \"name\": \"Canada\"\n                },\n                \"user\": {\n                    \"_id\": \"5f174a822aaadd631da86127\",\n                    \"name\": \"inu\"\n                },\n                \"createdAt\": \"2020-07-22T06:54:01.469Z\",\n                \"updatedAt\": \"2020-07-22T06:54:01.469Z\"\n            },\n            {\n                \"image\": \"https://getuikit.com/v2/docs/images/placeholder_600x400.svg\",\n                \"isFeatured\": false,\n                \"tags\": [],\n                \"deleted\": false,\n                \"views\": 0,\n                \"_id\": \"5f17e2dc068fa61a2ea92130\",\n                \"title\": \"my canadian dream\",\n                \"topicId\": {\n                    \"_id\": \"5f177fdb7efa14007db2f840\",\n                    \"name\": \"Canada\"\n                },\n                \"user\": {\n                    \"_id\": \"5f174a822aaadd631da86127\",\n                    \"name\": \"inu\"\n                },\n                \"createdAt\": \"2020-07-22T06:55:24.988Z\",\n                \"updatedAt\": \"2020-07-22T06:55:24.988Z\"\n            }\n        ]\n    },\n    \"status\": 200\n}"
+						}
+					]
+				},
+				{
+					"name": "list article",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url}}/articles/5f17e30b068fa61a2ea92132",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"articles",
+								"5f17e30b068fa61a2ea92132"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "list article",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/articles/5f17e30b068fa61a2ea92132",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"articles",
+										"5f17e30b068fa61a2ea92132"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "origin"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "WWW-Authenticate,Server-Authorization"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "content-length",
+									"value": "416"
+								},
+								{
+									"key": "accept-ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jul 2020 12:08:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Operation successful\",\n    \"data\": {\n        \"image\": \"https://getuikit.com/v2/docs/images/placeholder_600x400.svg\",\n        \"isFeatured\": true,\n        \"tags\": [\n            \"canada\",\n            \"life\",\n            \"chill\",\n            \"x\",\n            \"japan\"\n        ],\n        \"deleted\": false,\n        \"views\": 0,\n        \"_id\": \"5f17e30b068fa61a2ea92132\",\n        \"title\": \"my japan\",\n        \"topicId\": \"5f177fdb7efa14007db2f840\",\n        \"user\": \"5f174a822aaadd631da86127\",\n        \"createdAt\": \"2020-07-22T06:56:11.266Z\",\n        \"updatedAt\": \"2020-07-22T11:19:50.344Z\"\n    },\n    \"status\": 200\n}"
+						},
+						{
+							"name": "list article",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/articles/5f17e30b068fa61a2ea92132",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"articles",
+										"5f17e30b068fa61a2ea92132"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "origin,accept-encoding"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "WWW-Authenticate,Server-Authorization"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "content-encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jul 2020 14:59:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Operation successful\",\n    \"data\": {\n        \"article\": {\n            \"image\": \"https://getuikit.com/v2/docs/images/placeholder_600x400.svg\",\n            \"isFeatured\": true,\n            \"tags\": [\n                \"canada\",\n                \"life\",\n                \"chill\",\n                \"x\",\n                \"japan\"\n            ],\n            \"deleted\": false,\n            \"views\": 4,\n            \"_id\": \"5f17e30b068fa61a2ea92132\",\n            \"title\": \"my japan\",\n            \"topicId\": \"5f177fdb7efa14007db2f840\",\n            \"user\": \"5f174a822aaadd631da86127\",\n            \"createdAt\": \"2020-07-22T06:56:11.266Z\",\n            \"updatedAt\": \"2020-07-22T14:59:52.789Z\"\n        },\n        \"relatedArticles\": {\n            \"total\": 5,\n            \"articles\": [\n                {\n                    \"image\": \"https://getuikit.com/v2/docs/images/placeholder_600x400.svg\",\n                    \"isFeatured\": false,\n                    \"tags\": [\n                        \"12\",\n                        \"omh\",\n                        \"omaha\",\n                        \"canada\",\n                        \"nn\"\n                    ],\n                    \"deleted\": false,\n                    \"views\": 0,\n                    \"_id\": \"5f17e2dc068fa61a2ea92130\",\n                    \"title\": \"my canadian dream\",\n                    \"topicId\": {\n                        \"_id\": \"5f177fdb7efa14007db2f840\",\n                        \"name\": \"Canada\"\n                    },\n                    \"user\": {\n                        \"_id\": \"5f174a822aaadd631da86127\",\n                        \"name\": \"inu\"\n                    },\n                    \"createdAt\": \"2020-07-22T06:55:24.988Z\",\n                    \"updatedAt\": \"2020-07-22T06:55:24.988Z\"\n                },\n                {\n                    \"image\": \"https://getuikit.com/v2/docs/images/placeholder_600x400.svg\",\n                    \"isFeatured\": true,\n                    \"tags\": [\n                        \"canada\",\n                        \"life\",\n                        \"chill\",\n                        \"x\",\n                        \"japan\"\n                    ],\n                    \"deleted\": false,\n                    \"views\": 4,\n                    \"_id\": \"5f17e30b068fa61a2ea92132\",\n                    \"title\": \"my japan\",\n                    \"topicId\": {\n                        \"_id\": \"5f177fdb7efa14007db2f840\",\n                        \"name\": \"Canada\"\n                    },\n                    \"user\": {\n                        \"_id\": \"5f174a822aaadd631da86127\",\n                        \"name\": \"inu\"\n                    },\n                    \"createdAt\": \"2020-07-22T06:56:11.266Z\",\n                    \"updatedAt\": \"2020-07-22T14:59:52.789Z\"\n                },\n                {\n                    \"image\": \"https://getuikit.com/v2/docs/images/placeholder_600x400.svg\",\n                    \"isFeatured\": true,\n                    \"tags\": [\n                        \"canada\",\n                        \"life\"\n                    ],\n                    \"deleted\": false,\n                    \"views\": 0,\n                    \"_id\": \"5f181fe95cecfd34c46777ec\",\n                    \"title\": \"fuji dreams\",\n                    \"topicId\": {\n                        \"_id\": \"5f177f777e086f8594b37d87\",\n                        \"name\": \"Japan\"\n                    },\n                    \"user\": {\n                        \"_id\": \"5f174a822aaadd631da86127\",\n                        \"name\": \"inu\"\n                    },\n                    \"createdAt\": \"2020-07-22T11:15:53.881Z\",\n                    \"updatedAt\": \"2020-07-22T11:15:53.881Z\"\n                },\n                {\n                    \"image\": \"https://getuikit.com/v2/docs/images/placeholder_600x400.svg\",\n                    \"isFeatured\": false,\n                    \"tags\": [\n                        \"canada\",\n                        \"life\"\n                    ],\n                    \"deleted\": false,\n                    \"views\": 0,\n                    \"_id\": \"5f1820835cecfd34c46777ed\",\n                    \"title\": \"osaka dreams\",\n                    \"topicId\": {\n                        \"_id\": \"5f177f777e086f8594b37d87\",\n                        \"name\": \"Japan\"\n                    },\n                    \"user\": {\n                        \"_id\": \"5f174a822aaadd631da86127\",\n                        \"name\": \"inu\"\n                    },\n                    \"createdAt\": \"2020-07-22T11:18:27.264Z\",\n                    \"updatedAt\": \"2020-07-22T11:18:27.264Z\"\n                },\n                {\n                    \"image\": \"https://getuikit.com/v2/docs/images/placeholder_600x400.svg\",\n                    \"isFeatured\": false,\n                    \"tags\": [\n                        \"canada\",\n                        \"life\"\n                    ],\n                    \"deleted\": false,\n                    \"views\": 0,\n                    \"_id\": \"5f1820ea5cecfd34c46777ee\",\n                    \"title\": \"osaka dreams\",\n                    \"topicId\": {\n                        \"_id\": \"5f177f777e086f8594b37d87\",\n                        \"name\": \"Japan\"\n                    },\n                    \"user\": {\n                        \"_id\": \"5f174a822aaadd631da86127\",\n                        \"name\": \"inu\"\n                    },\n                    \"createdAt\": \"2020-07-22T11:20:10.561Z\",\n                    \"updatedAt\": \"2020-07-22T11:20:10.561Z\"\n                }\n            ]\n        }\n    },\n    \"status\": 200\n}"
+						},
+						{
+							"name": "list article",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/articles/5f17e30b068fa61a2ea92132",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"articles",
+										"5f17e30b068fa61a2ea92132"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "origin"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "WWW-Authenticate,Server-Authorization"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "content-length",
+									"value": "54"
+								},
+								{
+									"key": "accept-ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jul 2020 14:59:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Article not found\",\n    \"data\": {},\n    \"status\": 200\n}"
+						},
+						{
+							"name": "list article",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/articles/5f17e30b068fa61a2ea92132",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"articles",
+										"5f17e30b068fa61a2ea92132"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "origin,accept-encoding"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "WWW-Authenticate,Server-Authorization"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "content-encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jul 2020 15:06:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Operation successful\",\n    \"data\": {\n        \"article\": {\n            \"image\": \"https://getuikit.com/v2/docs/images/placeholder_600x400.svg\",\n            \"isFeatured\": true,\n            \"tags\": [\n                \"canada\",\n                \"life\",\n                \"chill\",\n                \"x\",\n                \"japan\"\n            ],\n            \"deleted\": false,\n            \"views\": 6,\n            \"_id\": \"5f17e30b068fa61a2ea92132\",\n            \"title\": \"my japan\",\n            \"topicId\": \"5f177fdb7efa14007db2f840\",\n            \"user\": \"5f174a822aaadd631da86127\",\n            \"createdAt\": \"2020-07-22T06:56:11.266Z\",\n            \"updatedAt\": \"2020-07-22T15:06:34.362Z\"\n        },\n        \"relatedArticles\": {\n            \"total\": 4,\n            \"articles\": [\n                {\n                    \"image\": \"https://getuikit.com/v2/docs/images/placeholder_600x400.svg\",\n                    \"isFeatured\": false,\n                    \"tags\": [\n                        \"12\",\n                        \"omh\",\n                        \"omaha\",\n                        \"canada\",\n                        \"nn\"\n                    ],\n                    \"deleted\": false,\n                    \"views\": 0,\n                    \"_id\": \"5f17e2dc068fa61a2ea92130\",\n                    \"title\": \"my canadian dream\",\n                    \"topicId\": {\n                        \"_id\": \"5f177fdb7efa14007db2f840\",\n                        \"name\": \"Canada\"\n                    },\n                    \"user\": {\n                        \"_id\": \"5f174a822aaadd631da86127\",\n                        \"name\": \"inu\"\n                    },\n                    \"createdAt\": \"2020-07-22T06:55:24.988Z\",\n                    \"updatedAt\": \"2020-07-22T06:55:24.988Z\"\n                },\n                {\n                    \"image\": \"https://getuikit.com/v2/docs/images/placeholder_600x400.svg\",\n                    \"isFeatured\": true,\n                    \"tags\": [\n                        \"canada\",\n                        \"life\"\n                    ],\n                    \"deleted\": false,\n                    \"views\": 0,\n                    \"_id\": \"5f181fe95cecfd34c46777ec\",\n                    \"title\": \"fuji dreams\",\n                    \"topicId\": {\n                        \"_id\": \"5f177f777e086f8594b37d87\",\n                        \"name\": \"Japan\"\n                    },\n                    \"user\": {\n                        \"_id\": \"5f174a822aaadd631da86127\",\n                        \"name\": \"inu\"\n                    },\n                    \"createdAt\": \"2020-07-22T11:15:53.881Z\",\n                    \"updatedAt\": \"2020-07-22T11:15:53.881Z\"\n                },\n                {\n                    \"image\": \"https://getuikit.com/v2/docs/images/placeholder_600x400.svg\",\n                    \"isFeatured\": false,\n                    \"tags\": [\n                        \"canada\",\n                        \"life\"\n                    ],\n                    \"deleted\": false,\n                    \"views\": 0,\n                    \"_id\": \"5f1820835cecfd34c46777ed\",\n                    \"title\": \"osaka dreams\",\n                    \"topicId\": {\n                        \"_id\": \"5f177f777e086f8594b37d87\",\n                        \"name\": \"Japan\"\n                    },\n                    \"user\": {\n                        \"_id\": \"5f174a822aaadd631da86127\",\n                        \"name\": \"inu\"\n                    },\n                    \"createdAt\": \"2020-07-22T11:18:27.264Z\",\n                    \"updatedAt\": \"2020-07-22T11:18:27.264Z\"\n                },\n                {\n                    \"image\": \"https://getuikit.com/v2/docs/images/placeholder_600x400.svg\",\n                    \"isFeatured\": false,\n                    \"tags\": [\n                        \"canada\",\n                        \"life\"\n                    ],\n                    \"deleted\": false,\n                    \"views\": 0,\n                    \"_id\": \"5f1820ea5cecfd34c46777ee\",\n                    \"title\": \"osaka dreams\",\n                    \"topicId\": {\n                        \"_id\": \"5f177f777e086f8594b37d87\",\n                        \"name\": \"Japan\"\n                    },\n                    \"user\": {\n                        \"_id\": \"5f174a822aaadd631da86127\",\n                        \"name\": \"inu\"\n                    },\n                    \"createdAt\": \"2020-07-22T11:20:10.561Z\",\n                    \"updatedAt\": \"2020-07-22T11:20:10.561Z\"\n                }\n            ]\n        }\n    },\n    \"status\": 200\n}"
+						},
+						{
+							"name": "list article",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "{{token}}",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/articles/5f17e30b068fa61a2ea92132",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"articles",
+										"5f17e30b068fa61a2ea92132"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "origin"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "WWW-Authenticate,Server-Authorization"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "content-length",
+									"value": "57"
+								},
+								{
+									"key": "accept-ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jul 2020 12:08:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Operation successful\",\n    \"data\": {},\n    \"status\": 200\n}"
+						}
+					]
+				},
+				{
+					"name": "bst",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url}}/articles/bst",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"articles",
+								"bst"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "list article",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/articles/5f17e30b068fa61a2ea92132",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"articles",
+										"5f17e30b068fa61a2ea92132"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "origin,accept-encoding"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "WWW-Authenticate,Server-Authorization"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "content-encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jul 2020 14:59:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Operation successful\",\n    \"data\": {\n        \"article\": {\n            \"image\": \"https://getuikit.com/v2/docs/images/placeholder_600x400.svg\",\n            \"isFeatured\": true,\n            \"tags\": [\n                \"canada\",\n                \"life\",\n                \"chill\",\n                \"x\",\n                \"japan\"\n            ],\n            \"deleted\": false,\n            \"views\": 4,\n            \"_id\": \"5f17e30b068fa61a2ea92132\",\n            \"title\": \"my japan\",\n            \"topicId\": \"5f177fdb7efa14007db2f840\",\n            \"user\": \"5f174a822aaadd631da86127\",\n            \"createdAt\": \"2020-07-22T06:56:11.266Z\",\n            \"updatedAt\": \"2020-07-22T14:59:52.789Z\"\n        },\n        \"relatedArticles\": {\n            \"total\": 5,\n            \"articles\": [\n                {\n                    \"image\": \"https://getuikit.com/v2/docs/images/placeholder_600x400.svg\",\n                    \"isFeatured\": false,\n                    \"tags\": [\n                        \"12\",\n                        \"omh\",\n                        \"omaha\",\n                        \"canada\",\n                        \"nn\"\n                    ],\n                    \"deleted\": false,\n                    \"views\": 0,\n                    \"_id\": \"5f17e2dc068fa61a2ea92130\",\n                    \"title\": \"my canadian dream\",\n                    \"topicId\": {\n                        \"_id\": \"5f177fdb7efa14007db2f840\",\n                        \"name\": \"Canada\"\n                    },\n                    \"user\": {\n                        \"_id\": \"5f174a822aaadd631da86127\",\n                        \"name\": \"inu\"\n                    },\n                    \"createdAt\": \"2020-07-22T06:55:24.988Z\",\n                    \"updatedAt\": \"2020-07-22T06:55:24.988Z\"\n                },\n                {\n                    \"image\": \"https://getuikit.com/v2/docs/images/placeholder_600x400.svg\",\n                    \"isFeatured\": true,\n                    \"tags\": [\n                        \"canada\",\n                        \"life\",\n                        \"chill\",\n                        \"x\",\n                        \"japan\"\n                    ],\n                    \"deleted\": false,\n                    \"views\": 4,\n                    \"_id\": \"5f17e30b068fa61a2ea92132\",\n                    \"title\": \"my japan\",\n                    \"topicId\": {\n                        \"_id\": \"5f177fdb7efa14007db2f840\",\n                        \"name\": \"Canada\"\n                    },\n                    \"user\": {\n                        \"_id\": \"5f174a822aaadd631da86127\",\n                        \"name\": \"inu\"\n                    },\n                    \"createdAt\": \"2020-07-22T06:56:11.266Z\",\n                    \"updatedAt\": \"2020-07-22T14:59:52.789Z\"\n                },\n                {\n                    \"image\": \"https://getuikit.com/v2/docs/images/placeholder_600x400.svg\",\n                    \"isFeatured\": true,\n                    \"tags\": [\n                        \"canada\",\n                        \"life\"\n                    ],\n                    \"deleted\": false,\n                    \"views\": 0,\n                    \"_id\": \"5f181fe95cecfd34c46777ec\",\n                    \"title\": \"fuji dreams\",\n                    \"topicId\": {\n                        \"_id\": \"5f177f777e086f8594b37d87\",\n                        \"name\": \"Japan\"\n                    },\n                    \"user\": {\n                        \"_id\": \"5f174a822aaadd631da86127\",\n                        \"name\": \"inu\"\n                    },\n                    \"createdAt\": \"2020-07-22T11:15:53.881Z\",\n                    \"updatedAt\": \"2020-07-22T11:15:53.881Z\"\n                },\n                {\n                    \"image\": \"https://getuikit.com/v2/docs/images/placeholder_600x400.svg\",\n                    \"isFeatured\": false,\n                    \"tags\": [\n                        \"canada\",\n                        \"life\"\n                    ],\n                    \"deleted\": false,\n                    \"views\": 0,\n                    \"_id\": \"5f1820835cecfd34c46777ed\",\n                    \"title\": \"osaka dreams\",\n                    \"topicId\": {\n                        \"_id\": \"5f177f777e086f8594b37d87\",\n                        \"name\": \"Japan\"\n                    },\n                    \"user\": {\n                        \"_id\": \"5f174a822aaadd631da86127\",\n                        \"name\": \"inu\"\n                    },\n                    \"createdAt\": \"2020-07-22T11:18:27.264Z\",\n                    \"updatedAt\": \"2020-07-22T11:18:27.264Z\"\n                },\n                {\n                    \"image\": \"https://getuikit.com/v2/docs/images/placeholder_600x400.svg\",\n                    \"isFeatured\": false,\n                    \"tags\": [\n                        \"canada\",\n                        \"life\"\n                    ],\n                    \"deleted\": false,\n                    \"views\": 0,\n                    \"_id\": \"5f1820ea5cecfd34c46777ee\",\n                    \"title\": \"osaka dreams\",\n                    \"topicId\": {\n                        \"_id\": \"5f177f777e086f8594b37d87\",\n                        \"name\": \"Japan\"\n                    },\n                    \"user\": {\n                        \"_id\": \"5f174a822aaadd631da86127\",\n                        \"name\": \"inu\"\n                    },\n                    \"createdAt\": \"2020-07-22T11:20:10.561Z\",\n                    \"updatedAt\": \"2020-07-22T11:20:10.561Z\"\n                }\n            ]\n        }\n    },\n    \"status\": 200\n}"
+						},
+						{
+							"name": "list article",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/articles/5f17e30b068fa61a2ea92132",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"articles",
+										"5f17e30b068fa61a2ea92132"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "origin"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "WWW-Authenticate,Server-Authorization"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "content-length",
+									"value": "54"
+								},
+								{
+									"key": "accept-ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jul 2020 14:59:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Article not found\",\n    \"data\": {},\n    \"status\": 200\n}"
+						},
+						{
+							"name": "list article",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "{{token}}",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/articles/5f17e30b068fa61a2ea92132",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"articles",
+										"5f17e30b068fa61a2ea92132"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "origin"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "WWW-Authenticate,Server-Authorization"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "content-length",
+									"value": "57"
+								},
+								{
+									"key": "accept-ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jul 2020 12:08:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Operation successful\",\n    \"data\": {},\n    \"status\": 200\n}"
+						},
+						{
+							"name": "list article",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/articles/5f17e30b068fa61a2ea92132",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"articles",
+										"5f17e30b068fa61a2ea92132"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "origin"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "WWW-Authenticate,Server-Authorization"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "content-length",
+									"value": "416"
+								},
+								{
+									"key": "accept-ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jul 2020 12:08:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Operation successful\",\n    \"data\": {\n        \"image\": \"https://getuikit.com/v2/docs/images/placeholder_600x400.svg\",\n        \"isFeatured\": true,\n        \"tags\": [\n            \"canada\",\n            \"life\",\n            \"chill\",\n            \"x\",\n            \"japan\"\n        ],\n        \"deleted\": false,\n        \"views\": 0,\n        \"_id\": \"5f17e30b068fa61a2ea92132\",\n        \"title\": \"my japan\",\n        \"topicId\": \"5f177fdb7efa14007db2f840\",\n        \"user\": \"5f174a822aaadd631da86127\",\n        \"createdAt\": \"2020-07-22T06:56:11.266Z\",\n        \"updatedAt\": \"2020-07-22T11:19:50.344Z\"\n    },\n    \"status\": 200\n}"
+						},
+						{
+							"name": "list article",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/articles/5f17e30b068fa61a2ea92132",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"articles",
+										"5f17e30b068fa61a2ea92132"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "origin,accept-encoding"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "WWW-Authenticate,Server-Authorization"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "content-encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jul 2020 15:06:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Operation successful\",\n    \"data\": {\n        \"article\": {\n            \"image\": \"https://getuikit.com/v2/docs/images/placeholder_600x400.svg\",\n            \"isFeatured\": true,\n            \"tags\": [\n                \"canada\",\n                \"life\",\n                \"chill\",\n                \"x\",\n                \"japan\"\n            ],\n            \"deleted\": false,\n            \"views\": 6,\n            \"_id\": \"5f17e30b068fa61a2ea92132\",\n            \"title\": \"my japan\",\n            \"topicId\": \"5f177fdb7efa14007db2f840\",\n            \"user\": \"5f174a822aaadd631da86127\",\n            \"createdAt\": \"2020-07-22T06:56:11.266Z\",\n            \"updatedAt\": \"2020-07-22T15:06:34.362Z\"\n        },\n        \"relatedArticles\": {\n            \"total\": 4,\n            \"articles\": [\n                {\n                    \"image\": \"https://getuikit.com/v2/docs/images/placeholder_600x400.svg\",\n                    \"isFeatured\": false,\n                    \"tags\": [\n                        \"12\",\n                        \"omh\",\n                        \"omaha\",\n                        \"canada\",\n                        \"nn\"\n                    ],\n                    \"deleted\": false,\n                    \"views\": 0,\n                    \"_id\": \"5f17e2dc068fa61a2ea92130\",\n                    \"title\": \"my canadian dream\",\n                    \"topicId\": {\n                        \"_id\": \"5f177fdb7efa14007db2f840\",\n                        \"name\": \"Canada\"\n                    },\n                    \"user\": {\n                        \"_id\": \"5f174a822aaadd631da86127\",\n                        \"name\": \"inu\"\n                    },\n                    \"createdAt\": \"2020-07-22T06:55:24.988Z\",\n                    \"updatedAt\": \"2020-07-22T06:55:24.988Z\"\n                },\n                {\n                    \"image\": \"https://getuikit.com/v2/docs/images/placeholder_600x400.svg\",\n                    \"isFeatured\": true,\n                    \"tags\": [\n                        \"canada\",\n                        \"life\"\n                    ],\n                    \"deleted\": false,\n                    \"views\": 0,\n                    \"_id\": \"5f181fe95cecfd34c46777ec\",\n                    \"title\": \"fuji dreams\",\n                    \"topicId\": {\n                        \"_id\": \"5f177f777e086f8594b37d87\",\n                        \"name\": \"Japan\"\n                    },\n                    \"user\": {\n                        \"_id\": \"5f174a822aaadd631da86127\",\n                        \"name\": \"inu\"\n                    },\n                    \"createdAt\": \"2020-07-22T11:15:53.881Z\",\n                    \"updatedAt\": \"2020-07-22T11:15:53.881Z\"\n                },\n                {\n                    \"image\": \"https://getuikit.com/v2/docs/images/placeholder_600x400.svg\",\n                    \"isFeatured\": false,\n                    \"tags\": [\n                        \"canada\",\n                        \"life\"\n                    ],\n                    \"deleted\": false,\n                    \"views\": 0,\n                    \"_id\": \"5f1820835cecfd34c46777ed\",\n                    \"title\": \"osaka dreams\",\n                    \"topicId\": {\n                        \"_id\": \"5f177f777e086f8594b37d87\",\n                        \"name\": \"Japan\"\n                    },\n                    \"user\": {\n                        \"_id\": \"5f174a822aaadd631da86127\",\n                        \"name\": \"inu\"\n                    },\n                    \"createdAt\": \"2020-07-22T11:18:27.264Z\",\n                    \"updatedAt\": \"2020-07-22T11:18:27.264Z\"\n                },\n                {\n                    \"image\": \"https://getuikit.com/v2/docs/images/placeholder_600x400.svg\",\n                    \"isFeatured\": false,\n                    \"tags\": [\n                        \"canada\",\n                        \"life\"\n                    ],\n                    \"deleted\": false,\n                    \"views\": 0,\n                    \"_id\": \"5f1820ea5cecfd34c46777ee\",\n                    \"title\": \"osaka dreams\",\n                    \"topicId\": {\n                        \"_id\": \"5f177f777e086f8594b37d87\",\n                        \"name\": \"Japan\"\n                    },\n                    \"user\": {\n                        \"_id\": \"5f174a822aaadd631da86127\",\n                        \"name\": \"inu\"\n                    },\n                    \"createdAt\": \"2020-07-22T11:20:10.561Z\",\n                    \"updatedAt\": \"2020-07-22T11:20:10.561Z\"\n                }\n            ]\n        }\n    },\n    \"status\": 200\n}"
+						}
+					]
+				},
+				{
+					"name": "create article",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"fuji dreams\",\n\t\"topicId\": \"5f177f777e086f8594b37d87\",\n\t\"isFeatured\": true,\n\t\"tags\": [\"canada\", \"life\"]\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/articles/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"articles",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create article",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"title\": \"osaka dreams\",\n\t\"topicId\": \"5f177f777e086f8594b37d87\",\n\t\"isFeatured\": false,\n\t\"tags\": [\"canada\", \"life\"]\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/articles/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"articles",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "origin"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "WWW-Authenticate,Server-Authorization"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "content-length",
+									"value": "406"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jul 2020 11:20:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Topic creation successful\",\n    \"data\": {\n        \"image\": \"https://getuikit.com/v2/docs/images/placeholder_600x400.svg\",\n        \"isFeatured\": false,\n        \"tags\": [\n            \"canada\",\n            \"life\"\n        ],\n        \"deleted\": false,\n        \"views\": 0,\n        \"_id\": \"5f1820ea5cecfd34c46777ee\",\n        \"title\": \"osaka dreams\",\n        \"topicId\": \"5f177f777e086f8594b37d87\",\n        \"user\": \"5f174a822aaadd631da86127\",\n        \"createdAt\": \"2020-07-22T11:20:10.561Z\",\n        \"updatedAt\": \"2020-07-22T11:20:10.561Z\"\n    },\n    \"status\": 200\n}"
+						}
+					]
+				},
+				{
+					"name": "update article",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"_id\": \"5f177fdb7efa14007db2f840\",\n\t\"title\": \"my toronto dreams\",\n\t\"topicId\": \"5f177fdb7efa14007db2f840\",\n\t\"isFeatured\": true,\n\t\"tags\": [\"canada\", \"life\"]\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/articles/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"articles",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update article",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"title\": \"my japan\",\n\t\"topicId\": \"5f1820835cecfd34c46777ed\",\n\t\"isFeatured\": \"\",\n\t\"deleted\": false,\n\t\"tags\": [\"japan\", \"life\", \"chill\", \"chill\", \"x\"]\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/articles/5f17e30b068fa61a2ea92132",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"articles",
+										"5f17e30b068fa61a2ea92132"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "origin"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "WWW-Authenticate,Server-Authorization"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "content-length",
+									"value": "413"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jul 2020 11:19:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Update successful\",\n    \"data\": {\n        \"image\": \"https://getuikit.com/v2/docs/images/placeholder_600x400.svg\",\n        \"isFeatured\": true,\n        \"tags\": [\n            \"canada\",\n            \"life\",\n            \"chill\",\n            \"x\",\n            \"japan\"\n        ],\n        \"deleted\": false,\n        \"views\": 0,\n        \"_id\": \"5f17e30b068fa61a2ea92132\",\n        \"title\": \"my japan\",\n        \"topicId\": \"5f177fdb7efa14007db2f840\",\n        \"user\": \"5f174a822aaadd631da86127\",\n        \"createdAt\": \"2020-07-22T06:56:11.266Z\",\n        \"updatedAt\": \"2020-07-22T11:19:50.344Z\"\n    },\n    \"status\": 200\n}"
+						},
+						{
+							"name": "update article bst when deleted",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"deleted\": true\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/articles/5f17e30b068fa61a2ea92132",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"articles",
+										"5f17e30b068fa61a2ea92132"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "origin"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "WWW-Authenticate,Server-Authorization"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "content-length",
+									"value": "413"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jul 2020 19:30:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Update successful\",\n    \"data\": [\n        {\n            \"views\": 1,\n            \"key\": \"5f1820ea5cecfd34c46777ee\"\n        },\n        {\n            \"views\": 0,\n            \"key\": \"5f17e2dc068fa61a2ea92130\"\n        },\n        {\n            \"views\": 0,\n            \"key\": \"5f1820835cecfd34c46777ed\"\n        },\n        {\n            \"views\": 0,\n            \"key\": \"5f181fe95cecfd34c46777ec\"\n        },\n        {\n            \"views\": 0,\n            \"key\": \"5f17e2f5068fa61a2ea92131\"\n        },\n        {\n            \"views\": 0,\n            \"key\": \"5f17e17683ec7d18e197a2f6\"\n        },\n        {\n            \"views\": 0,\n            \"key\": \"5f17e289e2a52719c027d80b\"\n        },\n        {\n            \"views\": 0,\n            \"key\": \"5f17e15d83ec7d18e197a2f5\"\n        }\n    ],\n    \"status\": 200\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "users status",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url}}/users/status",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"status"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "api status Copy Copy",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/users/status",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"users",
+										"status"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "origin"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "WWW-Authenticate,Server-Authorization"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "content-length",
+									"value": "57"
+								},
+								{
+									"key": "accept-ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 21 Jul 2020 23:38:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Operation successful\",\n    \"data\": {},\n    \"status\": 200\n}"
+						}
+					]
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n \"name\": \"dinu\",\n \"email\": \"dinushan@gmail.com\",\n \"password\": \"23232344323\",\n \"role\": \"admin\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/users/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n \"name\": \"dinu\",\n \"email\": \"dinushan@gmail.com\",\n \"password\": \"23232344323\",\n \"role\": \"admin\"\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/users/register",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"users",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "origin"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "WWW-Authenticate,Server-Authorization"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "content-length",
+									"value": "235"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 21 Jul 2020 20:17:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Registration Successful\",\n    \"data\": {\n        \"role\": \"user\",\n        \"_id\": \"5f174d56eb8e896476d61b39\",\n        \"name\": \"dinu\",\n        \"email\": \"dinushan@gmail.com\",\n        \"createdAt\": \"2020-07-21T20:17:26.275Z\",\n        \"updatedAt\": \"2020-07-21T20:17:26.275Z\",\n        \"__v\": 0\n    },\n    \"status\": 200\n}"
+						}
+					]
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n \"email\": \"dinushankanrg@gmail.com\",\n \"password\": \"2323234432\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/users/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n \"email\": \"dinushankanrg@gmail.com\",\n \"password\": \"2323234432\"\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/users/login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"users",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "origin"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "WWW-Authenticate,Server-Authorization"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "content-length",
+									"value": "430"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 21 Jul 2020 21:37:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Login Successful\",\n    \"data\": {\n        \"user\": {\n            \"role\": \"admin\",\n            \"_id\": \"5f174a822aaadd631da86127\",\n            \"name\": \"inu\",\n            \"email\": \"dinushankanrg@gmail.com\",\n            \"createdAt\": \"2020-07-21T20:05:22.815Z\",\n            \"updatedAt\": \"2020-07-21T21:36:04.807Z\"\n        },\n        \"token\": \"bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMTc0YTgyMmFhYWRkNjMxZGE4NjEyNyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTU5NTM2NzQyMSwiZXhwIjoxNTk1NDUzODIxfQ.yboVuwZGMKO309mlTdT3mg8S7bKgyUxI61fbiQFjXy8\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "update user",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n \"name\": \"inu\",\n \"password\": \"2323234432\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/users/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update user",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n \"name\": \"inu\",\n \"password\": \"2323234432\"\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/users/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"users",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "origin"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "WWW-Authenticate,Server-Authorization"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "content-length",
+									"value": "234"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 21 Jul 2020 21:36:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Update successful\",\n    \"data\": {\n        \"role\": \"admin\",\n        \"_id\": \"5f174a822aaadd631da86127\",\n        \"name\": \"inu\",\n        \"email\": \"dinushankanrg@gmail.com\",\n        \"createdAt\": \"2020-07-21T20:05:22.815Z\",\n        \"updatedAt\": \"2020-07-21T21:36:04.807Z\",\n        \"__v\": 0\n    },\n    \"status\": 200\n}"
+						}
+					]
+				},
+				{
+					"name": "make Admin",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"role\": \"admin\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/users/5f174cbfeb8e896476d61b37",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"5f174cbfeb8e896476d61b37"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "make Admin",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"role\": \"admin\"\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/users/5f174cbfeb8e896476d61b37",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"users",
+										"5f174cbfeb8e896476d61b37"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "origin"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "WWW-Authenticate,Server-Authorization"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "content-length",
+									"value": "226"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 21 Jul 2020 21:55:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Update successful\",\n    \"data\": {\n        \"role\": \"admin\",\n        \"_id\": \"5f174cbfeb8e896476d61b37\",\n        \"name\": \"dinu\",\n        \"email\": \"dinushankanr@gmail.com\",\n        \"createdAt\": \"2020-07-21T20:14:55.653Z\",\n        \"updatedAt\": \"2020-07-21T21:55:42.641Z\"\n    },\n    \"status\": 200\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n \"email\": \"dinushankanrg@gmail.com\",\n \"password\": \"sdffsdfdr\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/users/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
