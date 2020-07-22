@@ -6,14 +6,14 @@ const status = async(req, res) => {
 };
 
 const postTopic = async (req, res) => {
-  const { name } = req.body
+  const { name } = req.body;
   const exists = await hasTopicByName(name);
   
   if(exists) {
     return res.status(400).json(response(messages.error.topic.duplicate));
   }
-  
-  const topic = await create(req.body);
+  const id = req.user._id;
+  const topic = await create(req.body, id);
   
   if(!topic) {
     return res.status(400).json(response(messages.error.topic.creation));
@@ -22,8 +22,8 @@ const postTopic = async (req, res) => {
 };
 
 const listTopics = async(req, res) => {
-  const skip = req.query.skip || 0;
-  const limit = req.query.limit || 100;
+  const skip = parseInt(req.query.skip) || 0;
+  const limit = parseInt(req.query.limit) || 100;
   res.status(200).json(response(messages.success.general, await list(limit, skip)));
 };
 
