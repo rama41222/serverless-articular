@@ -41,22 +41,22 @@ Skip if you have already setup the following.
     4. .env.${name_of_the_env}
 
     ```dotenv
-        L_AWS_ACCESS_KEY=
-        L_AWS_SECRET=
-        DYANMODB_TABLE=
-        L_AWS_REGION=
-        
-        APP_NAME=
-        NODE_ENV=
-        JWT_SECRET=
-        JWT_ALGORITHM=
-        JWT_EXP=
-        
-        DB_HOST=
-        DB_PORT=
-        ADMIN_SEED={ "role": "", "name": "", "email": "", "password": ""}
-
+    L_AWS_ACCESS_KEY=
+    L_AWS_SECRET=
+    L_AWS_REGION=
+    APP_NAME=
+    NODE_ENV=
+    JWT_SECRET=
+    JWT_ALGORITHM=
+    JWT_EXP=5m
+    DB_NAME=
+    DB_HOST=
+    DB_PORT=
+    DB_PASSWORD=
+    DB_USER=
+    ADMIN_SEED={ "role": "", "name": "", "email": "", "password": ""}
     ```
+    
 7. Add the offline plugin to serverless framework 
     ```yaml
     plugins:
